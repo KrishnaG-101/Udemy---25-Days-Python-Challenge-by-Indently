@@ -1,0 +1,15 @@
+Type hints or Type Annotations are completely optional in python, but they make the code more readable and easy to debug.
+
+Primitive data types in python: str, int, float, complex, bool, and None
+Collection data types in python: list, tuple, set, frozenset and dict
+The collections library in python has additional collection data types available for use.
+
+Underscores can be added to numbers (int and float) like this 1_000_000_000 to make them more readable.
+
+Floats calculations are not precise and can cause unexpected results when comparing float, so it is advised to round off.
+
+Strings can be concatinated without the + operator, like this 'abcd' 'efgh' -> 'abcdefgh', this is called implicit string concatination.
+
+Bool: 1 == True -> True and 0 == False -> True, also True + True -> 2, python converts 1 to True and 0 to False for convenience.
+
+Type conversion in python is very flexible, just make sure that the conversion makes sense.

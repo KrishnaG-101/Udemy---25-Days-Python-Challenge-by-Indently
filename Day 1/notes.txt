@@ -1,0 +1,7 @@
+Syntax have to be accurate, mistakes will lead to errors.
+
+Comments are used to annotate code, just do not overuse or state the obvious.
+
+There is no built in support for Constants in python, so we use all caps for variables we want to treat as constants. e.g. PI = 3.14
+
+Learn fast kid, you have already learnt all of this.

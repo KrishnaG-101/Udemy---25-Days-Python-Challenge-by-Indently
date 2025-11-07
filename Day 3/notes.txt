@@ -1,0 +1,15 @@
+Type annotations with collection types are declared like this list[str | int], dict[str | float] or tuple[int, int] (ordered and one for one)
+
+Key bindings makes programming fast. (e.g. "ctrl + [" will remove indent from the line, "ctrl + ]" will add indent to the line, etc.)
+
+Type annotations also allow ellipsis i.e. tuple[int, ...] will indicate a lot of int values in the tuple.
+
+Tuples can be declared like this a = 1, 2 or a = (1, 2), both will result the same.
+
+True and 1, False and 0 are considered duplicates inside a set.
+
+Every collection data types has many different methods to work with specially sets, use or read documentation whenever required.
+
+There are many different operators in python as well including walrus (:=), pipe (|), etc. each with its different functionalities.
+
+Major built in collections in python include lists, tuples, sets, frozensets, dictionaries. Additional collections can be found in collections library.
