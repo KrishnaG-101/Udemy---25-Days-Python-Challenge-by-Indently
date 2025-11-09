@@ -1,4 +1,4 @@
-# This is version one of expense splitter program which  can be used to split expense/bill between number of people
+# This is version 1.0 of expense splitter program which  can be used to split expense/bill between number of people
 import sys
 
 def delete_last_line() -> None:
