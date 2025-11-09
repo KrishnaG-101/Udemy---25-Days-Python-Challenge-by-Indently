@@ -1,0 +1,9 @@
+Control Flow commands are used to determine the order of execution of lines of code.
+
+If - else short-hand can be used but make sure to not compromise the readability of the code.
+
+Use _ instead of a variable or i, if we are looping over without the use of the iterator value.
+
+Break and Continue are powerful keywords which can be used to change the control flow of our program.
+
+An 'else' statement can be used with both For loop and While loop to execute a statement if the loop finishes without any interruption. It can also be used to run statement if the loop was never entered.
