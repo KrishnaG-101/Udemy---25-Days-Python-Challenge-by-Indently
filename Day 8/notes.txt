@@ -1,0 +1,15 @@
+Error-Handling in python:
+
+You cannot assume users to know how to use your program, user's interactions with our program is unpredictable.
+
+Syntax Error cannot be handled.
+
+We can use try and except block to handle and print errors.
+
+We can handle multiple errors at once by putting the error classes in a tuple when specifying in except.
+
+Finally is used to run a block of code regardless of whether the previous code runs or throws an error. It can be used with or wihout try and except.
+
+We use raise keyword to raise particular or even custom errors using Error classes or Exception function.
+
+We can use Generic Exception handling techniques to get information about the errors during development or getting logs when the application is live.
