@@ -1,0 +1,9 @@
+Modules are essentially python files (.py), these help organize code as we can divide files (code) based on functionality.
+
+We use the . notation to access functionality inside a module, similarly we do that with sub-modules, classes, sub-classes and functions.
+
+import, from, as, *, __name__ == "__main__", pip, pip commands.
+
+Creating and importing a module will also run all its code in the imported file, to avoid that put the code inside if __name__ == "__main__" block to ensure its execution only on running the file at hand.
+
+Only install packages and code from trusted sources, beware of malicious code and vulnerabilities.
