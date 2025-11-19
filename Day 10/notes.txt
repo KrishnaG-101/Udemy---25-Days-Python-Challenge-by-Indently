@@ -1,0 +1,19 @@
+Every datatype can be used a boolean in python, this is called the concept of Truthy and Falsy.
+
+If any datatype variable contains a value then it is considered as Truthy else Falsy.
+e.g. all of the following values are Falsy in python: zero_int = 0, zero_float = 0.0, empty_str = "", empty_list = [], empty_dict = {}, empty_set = set(), none_type = None, etc.
+e.g. all of the following values are Truthy in python: pi = 3.14, name = "Tom", l1 = [0, None], d1 = {"name" : "abc"}, s1 = {0}, etc.
+
+We utilize this concept of Truthy and Falsy, in condition checking. e.g. (if empty_list:) this block of code will not execute as the variable is Falsy, rather than writing: (if len(empty_list) == 0:)
+
+To check whether a value is Truthy or Falsy we can simply check by typecasting to boolean. bool(Truthy) => True, bool(Falsy) => False.
+
+Floating numbers imprecision problem in computers arises due to the fact that we can only represent floating point value to a certain precision using binary.
+
+To handle this issue we can either use the round function, math.isclose() or decimal.Decimal class in python. But this will only be handy if we are dealing with situations where we have to work with float values.
+
+Scopes in python: variables and functions defined in outer scopes can be accessed in the inner scopes, but not the other way around. Scrictly with classes and functions.
+
+Global scope is the outermost scopes and variables, functions defined in global scope can be used inside other scopes.
+
+The global and nonlocal keywords should be used whenever accessing a variable from global or outer scopes inside a function, and moreover we should avoid defining same variable names in inner scopes as that of outer scopes to avoid shadowing in python.
