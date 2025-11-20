@@ -31,7 +31,8 @@ def check_website(url : str, timeout : int = 10) -> Response | None:
     """
     
     try:
-        response : Response = requests.get(normalise_url(url), timeout=timeout)
+        headers : dict[str, str] = {'Accept-Encoding': 'gzip, deflate'}   # To avoid Error: Already at the end of a Zstandard frame.
+        response : Response = requests.get(normalise_url(url), timeout=timeout, headers=headers)
         return response
     except Exception as error:
         print(f"\nError: {error}\n")
@@ -71,3 +72,5 @@ if __name__ == "__main__":
         website_diagnostics_display(user_input_url_response, display_headers=False)
     else:
         print("Onto sending GET request to your given URL we received the above error.\n")
+
+# Good Work! However, I believe the code lacks some annotation (commenting).
