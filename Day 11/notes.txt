@@ -1,0 +1,10 @@
+A lot of languages require a main entry point for their program, although python doesn't require a main entry point, it is recommended to create a main function to remove the variables from the global scope and avoiding shadow access problem.
+
+List comprehension technique allows for creation of a list or collection using simple one line syntax of for loop that can be combined with one liner conditionals.
+e.g. text = "Normal String", vowels = [vowel for vowel in text if vowel in "aeiouAEIOU"]
+
+Slicing is another great technique for accessing items from a sequence. syntax collection[start : end : skip], we can even use negative indices or negative skip values for reversing.
+
+Looping through and modifying the same data at the same time can introduce problems and bugs, that's why avoid looping and modifying at the same time.
+If can't be avoided then use a copy of the data using .copy() function or create a new collection and append while looping.
+Be careful modifying the original data while iterating over it, because it can create bugs which will be hard to find and debug.
