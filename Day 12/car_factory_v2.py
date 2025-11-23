@@ -128,7 +128,6 @@ def main() -> None:
                     print(f"\nBank Balance: \u20B9{bank_balance:,}")
                 case 3:
                     create_cars(cars=cars_inventory)
-                    
                 case 4:
                     bank_balance += sell_cars(cars=cars_inventory)
                 case 5:
@@ -147,3 +146,6 @@ if __name__ == "__main__":
     main()
 
 # There are a lot of improvement require, also annotations and doc strings.
+# Initially I tried to avoid passing a collection as input to a function and updating it inside, but had to sattle with it being the easiest solution.
+# I think Instance and Class methods should be used for such purposes or creating a whole new class 'Factory' for such operations (creating and selling cars).
+# Regardless there is lot for me to learn yet.
