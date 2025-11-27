@@ -1,0 +1,10 @@
+Methods are functions defined inside a class, functions and methods are essentially the same otherwise.
+
+Static Methods, defined using @staticmethod decorator are methods inside the class that do not depend on an instance, i.e. do not use self as variable at all inside the body.
+With @staticmethod decorator we can create a method that does not take the self parameter.
+Static Methods can be called using both the class itself and its instances.
+
+Class Methods, defined using @classmethod decorator are methods that effect the class directly, these take the cls parameter instead of self.
+Class Methods run on the class directly so these can only be called using the class name itsef. e.g. Car.change_year().
+We can use class methods for a lot of purposes: to access and modify class variables, create factory methods, or do anything on a class level.
+Factory Method technique: using class methods to create alternative constructors. Returns an instance of the class.
