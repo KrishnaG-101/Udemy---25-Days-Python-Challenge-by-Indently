@@ -14,21 +14,21 @@ class PasswordChecker:
     @staticmethod
     def score_to_rating(score : int) -> str:
         if score <= 2:
-            return "Poor"
+            return "🔴 Poor"
         elif score <= 4:
-            return "Medium"
+            return "🟡 Medium"
         else:
-            return "Strong"
+            return "🟢 Strong"
     
     def is_common(self, password : str) -> bool:
         return password in self.common_passwords
     
     def rate(self, password : str) -> tuple[str, str]:
         if len(password) <= 8:
-            return ("Very Poor", "\nWarning: Password must be 8 or more characters.")
+            return ("Very Poor", "\n⚠️  Warning: Password must be 8 or more characters.")
         
         if self.is_common(password=password):
-            return ("Very Poor", "\nWarning: Your password is common.")
+            return ("Very Poor", "\n⚠️  Warning: Your password is common.")
         
         score : int = 0
         recommendations : str = ""
@@ -94,6 +94,7 @@ def main() -> None:
         recommendations : str = rating_tuple[1]
         
         print(f"\nrating: {rating}\n{recommendations}\n")
+        print("-"*30)
     
 
 if __name__ == "__main__":
