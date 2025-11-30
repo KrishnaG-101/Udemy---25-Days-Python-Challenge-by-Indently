@@ -1,0 +1,23 @@
+Inheritance allows us to inherit behavior and functionalities from one class to another, allowing us to create subclasses and represent complex relationships in our code.
+We inherit from one class to another using brackets in from of our class name. e.g. class Cat(Mammal):
+Instance of child class can call method of parent class if allowed.
+
+The super() function is used to call methods or get variables of a parents class inside the implementation of the child class. A lot of that can also be done using self.
+We use super().__init__() inside the implementation of child class as we have to initialize the parent class as well in the child __init__().
+
+Name Mangling allows us to create variables and methods in the class that we don't want to be shadowed in child classes.
+We just have to add double underscores before the variable or method name. e.g. self.__balance will create one.
+Under the hood the variable self.__balance is converted to self._[Class_Name]__balance variable.
+It can also be used a method to create private variables and methods (cannot be used outside the class).
+
+We can use UUID class for creating a unique id for our object, we can use this inside out class implementation to give our objects unique ids which will help during their comparison.
+Always create private variables and methods for implementing functionalities that you do not want user to interact with directly.
+We use getters and setters to interact with an instance's variables, and do not access or update them directly.
+
+@abstractmethod
+from abc import ABC, abstractmethod
+Abstract Base Classes (ABC) and abstract methods are used to create classes and methods which are only to be used as a template for creating other classes and to ensure implementation.
+These are only used for guiding creation of child classes, and cannot be instanciated directly as these do not need an __init__() method.
+When we inherit from an ABC (Abstract Base Class) we have to implement the @abstractmethods with the correct signature (recommended), otherwise code will throw an error.
+
+...(elipces) and pass work very similarly, however we use pass to skip something delibrately, and ...(elipces) as a temprory place holder. However these can use interchangably as well.
