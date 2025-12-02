@@ -1,0 +1,42 @@
+# Continuing with built-in functions in python.
+
+Map Reduce Filter
+
+1. Filter: filter() function allows us to filter items from a collection based on a boolean function passed as an input.
+           filter() is a higher order function, i.e. it takes function as an input. If the function returns True for an item, that item is added to the iterable else not.
+           We can use lambda function as well.
+           If we pass None to the filter function in place of a function, it will remove all the Falsy values from the passed collection.
+           It returns and Iterable object and exhausts after being parsed once, just like enumerate.
+           We can do most of the tasks that filter() does with a list comprehension but the filter() function is efficient (used with big data) and allows for clean code practice.
+           Syntax: filter(filtering_function, collection)
+
+2. Map: map() function allows us to apply a function to each element of a given iterable.
+        It returns a memory efficient object which can be parsed once, just like enumerate.
+        We can also use map with functions which take multiple inputs, we just have to match that with number of collections passed.
+        If we pass multiple collections they do not necessarily have to be of equal length (if strict argument is not set to True), the map will stop mapping once the items in smaller collection runs out.
+        One good use can of map is that it can be used to apply built in functions to every item of a collection, without the use of loops directly.
+        Syntax: map(mapping_function, *collections)
+
+3. Sorted: sorted() allows us to sort a collection based on a passed function. By default it sorts by unicode value in ascending order. It returns a list object.
+           We can use the reverse argument to reverse the order of the sorted list directly.
+           We can pass the function based on which we want to sort by using the key argument. Just make sure the function passed returns something comparable like an integer value.
+           list.sort() and sorted() function works similarly but list.sort() works directly on the list whereas sorted() function returns a new list.
+           Syntax: sorted(collection, key=function, reverse=False)
+
+4. Eval: eval() function is a special / dangerous function using which we can not only evaluate expressions but also run python code from strings.
+         It takes string argument and evaluates the python code, the string can also contain and refer to variables and functions previously defined in the code (in the same scope).
+         eval() function is very strong and must only be used internally as if we allow users to run inputs using eval it will open doors to hackers to run malicious code.
+         eval() runs python code like in REPL.
+         Syntax: eval("\"james\".upper()") -> JAMES
+
+5. Exec: exec() function is also a special / dangerous function used to run python code from a string input.
+         It takes string argument and executes the python code, the string can also contain and refer to variables and functions previously defined in the code (in the same scope).
+         Just like eval() function, exec() should also be used cautiously and not allowed to be used by anyone in the script.
+         exec() runs python code directly, just like running an script. Its like running a python script inside a python script.
+         Syntax: exec("print(\"james\".upper())") -> JAMES
+
+6. Zip: zip() function allows us to zip multiple collections in one ordered manner, where each corresponding element from every collection is put into a tuple.
+        It allows us to group corresponding elements from collections into tuples.
+        If the collections have uneven length, the function will stop zipping after the shortest collection exhausts, we can set the strict parameter to True for making sure all collections are of same length.
+        Just like enumerate, this also returns a memory efficient object which can only be parsed once.
+        Syntax: zip(*collections)
