@@ -37,7 +37,7 @@ class Chatbot():
         if self.__contains("how are you", "and you", "how about you", text=prompt) and self.__contains("hello", "hi", text=" ".join(self.__memory)):
             return "I am fine, happy to meet you. Let me know if you need any help."
         elif self.__contains("tomorrow", text=prompt) and self.__contains("weather", text=" ".join(self.__memory)):
-            return "Tomorrow there is a 50% chance of rain, with an average temprature of 16 degrees celcius"
+            return "Tomorrow there is a 50% chance of rain, with an average temperature of 16 degrees celcius."
         elif self.__contains("what", "how", text=prompt) and self.__contains("listen", "let me tell you", text=" ".join(self.__memory)):
             return "I don't know, what do you think about that."
         elif self.__contains("sad", "depressed", "concern", text=prompt) and self.__contains("don't know", "?", text=self.__memory[-1]):
@@ -50,8 +50,8 @@ class Chatbot():
             return "I am Good, and you?"
         elif self.__contains("what time is it", "current time", text=prompt):
             return f"The current time is: {datetime.now().strftime("%H:%M:%S")}"
-        elif self.__contains("weather", "temprature", text=prompt):
-            return "The weather today will be cloudy and cold with an average temprature of 18 degrees celcius."
+        elif self.__contains("weather", "temperature", text=prompt):
+            return "The weather today will be cloudy and cold with an average temperature of 18 degrees celcius."
         elif self.__contains("listen", "let me tell you", text=prompt):
             return "Go ahead..."
         elif self.__contains("don't know", "confused", text=prompt):
