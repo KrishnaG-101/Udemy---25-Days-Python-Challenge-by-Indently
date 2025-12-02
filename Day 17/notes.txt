@@ -1,0 +1,18 @@
+# Continuing with the build-in functions in python.
+
+1. All: all() function takes a collection of items, and returns True if all of the elements are Truthy, if any of the element is Falsy it will return False.
+        If we pass an empty collection to all() it will return True, as technically no value inside the passed collection would be False.
+
+2. Any: any() function takes a collection of items, and returns True if any of the element is Truthy, if all of the elements are Falsy it will return False.
+        If we pass an empty collection to any() it will return False, as technically there are no True values in the collection.
+
+3. Isinstance: isinstance () function allows us to check if an object is an instance of a specified class or type. Returns Bool (True if isinstance, else False).
+               We can also pass a collection of classes to check if the object is from any of the given classes. e.g. isinstance(var, (list, tuple))
+               In case of subclasses: the instances of subclasses will be considered an instance of the base class as well, but not vice-versa.
+               e.g.  Cat(Animal)    var1 : Animal = Animal()  var2 : Cat = Cat()
+               isinstance(var1, Cat) -> False  isinstance(var1, Animal) -> True
+               isinstance(var2, Cat) -> True   isinstance(var2, Animal) -> True
+
+4. Callable: callable() function allows us to check weather a function is callable or not, i.e. is it a function name or just a variable.
+             It can be used to check weather we can call a function or not, before calling it.
+             e.g. var : int = 0, def func() -> None: print(This is a function)    callable(var) -> False  callable(func) -> True
