@@ -20,7 +20,7 @@ def extract_emails(text : str, unique : bool = True, case_sensitive : bool = Tru
     return emails
 
 def is_common_domain(email : str) -> bool:
-    return any(domain in email for domain in ["@gmail.com", "@outlook.com", "@hotmail.com", "@yahoo.com"])
+    return any((domain in email) for domain in ["@gmail.com", "@outlook.com", "@hotmail.com", "@yahoo.com"])
 
 def list_emails(path : str, only_common : bool = False) -> None:
     # Opening the file and saving the text.
