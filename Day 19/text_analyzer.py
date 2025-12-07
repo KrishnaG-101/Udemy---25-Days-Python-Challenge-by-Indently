@@ -13,6 +13,13 @@ def analyze(path : str) -> None:
     word_count : int = len(words)
     # count of characters
     char_count_with_space : int = len(text)
+    # counting average word length in the text
+    total_len_of_words : int = 0
+    
+    for word in words:
+        total_len_of_words += len(word)
+    
+    avg_word_len : float = total_len_of_words/word_count
     # count of white space and punctuation
     # we haven't applied .strip() to text so spaces before and after will be counted too.
     char_counter : Counter[str] = Counter(text)
@@ -27,6 +34,7 @@ def analyze(path : str) -> None:
     print(f"Number of characters in the text: {char_count_with_space}")
     print(f"Number of white spaces in the text: {white_space_count}")
     print(f"Number of words in the text: {word_count}")
+    print(f"Average word length in the text: {avg_word_len:.2f}")
     
     # count of each punctuation [",", ".", ";", ":", "'", "-", "!"]
     print("\nPunctuation count:")
