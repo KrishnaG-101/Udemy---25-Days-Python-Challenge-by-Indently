@@ -23,11 +23,18 @@ def analyze(path : str) -> None:
     three_most_common_words : list[tuple[str, int]] = Counter(words).most_common(3)
     
     # display
+    print("-" * 30)
     print(f"Number of characters in the text: {character_count_with_space}")
     print(f"Number of white spaces in the text: {white_space_count}")
     print(f"Number of words in the text: {word_count}")
-    print(f"Three most common words in our text: {three_most_common_words}")
-
+    print("\nThree most common words in our text:")
+    # Well I am a bit confused on how the code below works absolutely correctly.
+    # Because the three_most_common_words contains tuples inside which we have the values
+    # I mean it should be for tuple_ in variable: and we access "tuple_[0]" for word and "tuple_[1]" for frequency. right?
+    for word, frequency in three_most_common_words:
+        print(f"> {word}: {frequency}")
+    print("-" * 30)
+    
 def main() -> None:
     analyze("Day 19/sample.txt")
 
