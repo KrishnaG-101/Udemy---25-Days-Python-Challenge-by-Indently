@@ -1,0 +1,31 @@
+Async IO: Async IO is a built-in library that allows us to write Asynchronous code & programs in python.
+          Async IO allows our programs to handle multiple tasks at once, without waiting for one task to finish to start the next.
+          It is useful to make our programs more efficient specially when dealing with tasks that spend a lot of time waiting.
+          It is different from multi-threading and multi-programming or parallel processing.
+          Syntax includes: import asyncio  async def func()...  await asyncio.sleep()  await asyncio.gather()  asyncio.run(func), etc.
+
+Asynchronous Function: To mark a function as asynchronous, we just need to put "async" keyword in front of the function definition.
+                       e.g. async def func(<arguments>) -> <return_type>:...
+
+Await: await keyword is used to tell python to wait for completion of a particular line of code before moving on to the next line inside the function.
+       It is usually placed in front of the code without which we cannot proceed inside the function, e.g. downloading, getting API response, etc.
+       e.g. await asyncio.sleep(2)
+
+Task: Task is a class present in the asyncio module, which can be used to create asynchronous tasks inside our code.
+      We use it with asyncio.create_task() function, this function returns an object of class Task.
+      e.g. cat_task : Task[<return_type>] = asyncio.create_task(...)
+      We can assign the result from this task to a variable like this: cat_result : str = await cat_task
+      Task is used to complete multiple tasks at the same time and when the tasks are completed, we can assign the results to a variables.
+      We can also set timeouts on tasks by using the async.wait_for(task, timeout) function which will raise a TimeoutError if a task is not completed within a given period of time.
+      We can execute code lines in between the Task creation and result assignment, as the tasks may take time to complete, and we want some code to execute in between.
+
+asyncio.create_task(): returns a Task object, the task is started as soon as it is initiated, however result can only be assigned after completion, hence we use await for that.
+
+asyncio.wait_for(): It takes two arguments, the first one is the task and the second is a timeout.
+                    e.g. cat_result : str = await asyncio.wait_for(cat_task, 5), this will raise an error if the cat_task is not completed and the result is not assigned to cat_result within 5 seconds.
+
+asyncio.run(): It is used to run an asynchronous program, (we don't use this inside functions but in the global scope)*
+
+asyncio.gather(): asyncio.gather() function is used to complete multiple tasks instead of creating tasks individually and getting results, we start multiple tasks at once and get results in a list.
+                  We can also use a return_exceptions=True argument to complete the tasks regardless of an error in one or many of them, it will just return the exception itself for the tasks failed.
+                  e.g. results = await asyncio.gather(download(...), download(...), ...) or tasks = [download(...)...]  results = await asyncio.gather(*tasks, return_exceptions=True)
