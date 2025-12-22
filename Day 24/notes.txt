@@ -1,0 +1,54 @@
+With: The most common way to open a file in python is using "with" statement, it opens the file as a stream and closes it automatically even if any error occurs.
+      e.g. with open("file.txt", "r") as file: ...
+      Creating a with block does not create a new block of scope, the scope only applies for the file. i.e. only file variable cannot accessed outside the "with" block.
+
+Open(): open function is used to open a file in memory so we can work with it, it takes 2 arguments: file_path and mode ("r" for read, "a" for append, etc.)
+
+.close(): file.close() is used to close the file and free it from memory, it is always recommended to close the file after we are done working with it.
+
+Path: The file_path that we pass as an argument can be absolute path or relative path.
+      Absolute Path: The path of file with complete volume and directory information. e.g. "E:\Notes\temp.txt"
+      Relative Path: The path of file relative to the directory in which terminal is active or script is running. e.g. ".\temp.txt"
+
+Reading: Reading operations on a file can be done when we open a file in any of the read modes ("r", "r+w", etc.)
+  .read(): file.read() function is used in read mode to read information inside a file, it takes number of bytes as an argument, and returns information.
+        By default returns the whole file information, if no argument is passed.
+  
+  .readline(): file.readline() returns one line from the file.
+  
+  .readlines(): file.readlines() returns the list of lines in the file.
+  
+  file_cursor: when we are reading from a file, the file_cursor moves to the point we have read till, i.e. if we have read one line from the file, it will start from the next line.
+  
+  .seek(): file.seek() allows us to move the file_cursor to our desired index in the file. We can set file.seek(0) to start reading the file from the start again.
+  
+  .tell(): file.tell() returns the current position of file_cursor in the file.
+  
+  .removesuffix()
+
+Writing: Writing operations on a file can be done when we open a file in any of the write modes ("w" or "w+", etc.)
+         Opening a file and writing in it overwrites all of its contents, i.e. all of the content is replaced with what we write.
+         We can use file.write() any number of times to update the file and add lines.
+
+Appending: Appending operations on a file can be done when we open a file in any of the append modes ("a" or "r+a", etc.)
+           Appending essentially adds new information in our file without deleting or overwriting the previous information present in our file.
+           We use the same file.write() function to append into our file.
+           Append does not automatically add a new line, i.e. we have add \n in order to add information on separate lines in our file.
+           It can be useful for logging.
+
+JSON: JavaScript Object Notation (JSON) is a lightweight file format for storing and sharing data.
+      In python we use the built-in json module to work with json files.
+      json file format is very similar to python dictionary and hence we can easily change between the two.
+      We use the json.load(<file>) function to load a json file into a python dictionary.
+      We can use dataclasses to model data partially or completely that is retrieved from the json file.
+      In order to store data in a json file we use the json.dump(<dict>, file_path) method after opening the file under write mode.
+
+      Difference between JSON and Python Dictionary:
+        Using double quotes (") is mandatory for string datatype and keys in JSON.
+        Booleans are lower case in JSON, i.e. true and false.
+        In JSON we have null instead of None.
+      
+      In order to just retrieve the JSON representation as a string we can use the json.dumps(<dict>) method, which returns a JSON representation of the passed dictionary without storing in a file.
+      In order to just retrieve the dict representation as a string we can use the json.loads(<JSON>) method, which returns a string representation of dictionary coversion from a JSON.
+
+Errors: FileNotFoundError
